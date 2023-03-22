@@ -37,7 +37,7 @@ public class SeatServiceImpl implements SeatService{
         if (maybeSeat.isPresent()){
             var seat = maybeSeat.get();
             if (!seat.isAvailable()){
-                seat.setAvailable(false);
+                seat.setAvailable(true);
                 seatRepository.save(seat);
             } else {
                 throw new RuntimeException("Seat is not booked yet.");
